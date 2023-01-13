@@ -1,11 +1,14 @@
 package com.example.kcalog.domain;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Answer {
 
     @Id @GeneratedValue
@@ -13,7 +16,7 @@ public class Answer {
     private Long id;
 
     @Column(name = "answer_content")
-    private String ansContent;
+    private String content;
 
     @Enumerated(EnumType.STRING)
     private Emotion emotion;
@@ -26,5 +29,9 @@ public class Answer {
     @JoinColumn(name = "member_id")
     private Member member;
 
-
+    @Builder
+    public Answer(String content, Emotion emotion) {
+        this.content = content;
+        this.emotion = emotion;
+    }
 }

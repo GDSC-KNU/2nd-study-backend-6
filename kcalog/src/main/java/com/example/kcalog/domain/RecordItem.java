@@ -1,6 +1,8 @@
 package com.example.kcalog.domain;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class RecordItem {
 
     @Id
@@ -25,4 +28,9 @@ public class RecordItem {
     @OneToOne
     @JoinColumn(name = "food_id")
     private Food food;
+
+    @Builder
+    private RecordItem(int count) {
+        this.count = count;
+    }
 }

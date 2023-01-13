@@ -1,11 +1,15 @@
 package com.example.kcalog.domain;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Food {
     @Id @GeneratedValue
     @Column(name = "food_id")
@@ -25,4 +29,14 @@ public class Food {
 
     @OneToOne(mappedBy = "food")
     private RecordItem recordItem;
+
+    @Builder
+    public Food(String name, float kcal, float gram, float protein, float fat, float carb) {
+        this.name = name;
+        this.kcal = kcal;
+        this.gram = gram;
+        this.protein = protein;
+        this.fat = fat;
+        this.carb = carb;
+    }
 }

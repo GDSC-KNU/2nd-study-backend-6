@@ -1,7 +1,9 @@
 package com.example.kcalog.domain;
 
 import com.example.kcalog.domain.MealType;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,7 +13,7 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
 public class Record {
     @Id
     @GeneratedValue
@@ -30,4 +32,11 @@ public class Record {
 
     @OneToMany(mappedBy = "record")
     private List<RecordItem> recordItems = new ArrayList<RecordItem>();
+
+    @Builder
+
+    public Record(MealType mealType, LocalDate date) {
+        this.mealType = mealType;
+        this.date = date;
+    }
 }

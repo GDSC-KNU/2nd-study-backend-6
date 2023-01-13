@@ -1,6 +1,7 @@
 package com.example.kcalog.domain;
 
 import com.example.kcalog.domain.Gender;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
 public class Member {
     @Id @GeneratedValue
     @Column(name = "member_id")
@@ -45,4 +46,15 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Answer> answers = new ArrayList<Answer>();
 
+    @Builder
+    public Member(String email, String password, String name, float height, float weight, Gender gender, float dayKcal, float targetWeight) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.gender = gender;
+        this.dayKcal = dayKcal;
+        this.targetWeight = targetWeight;
+    }
 }
