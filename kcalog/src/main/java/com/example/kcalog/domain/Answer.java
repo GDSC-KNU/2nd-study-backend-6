@@ -30,7 +30,7 @@ public class Answer {
     private Member member;
 
     @Builder
-    public Answer(String content, Emotion emotion) {
+    private Answer(String content, Emotion emotion) {
         this.content = content;
         this.emotion = emotion;
     }

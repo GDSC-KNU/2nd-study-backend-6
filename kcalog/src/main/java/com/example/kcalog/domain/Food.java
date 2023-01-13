@@ -31,7 +31,7 @@ public class Food {
     private RecordItem recordItem;
 
     @Builder
-    public Food(String name, float kcal, float gram, float protein, float fat, float carb) {
+    private Food(String name, float kcal, float gram, float protein, float fat, float carb) {
         this.name = name;
         this.kcal = kcal;
         this.gram = gram;

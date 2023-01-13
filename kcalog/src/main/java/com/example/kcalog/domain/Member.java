@@ -47,7 +47,7 @@ public class Member {
     private List<Answer> answers = new ArrayList<Answer>();
 
     @Builder
-    public Member(String email, String password, String name, float height, float weight, Gender gender, float dayKcal, float targetWeight) {
+    private Member(String email, String password, String name, float height, float weight, Gender gender, float dayKcal, float targetWeight) {
         this.email = email;
         this.password = password;
         this.name = name;
@@ -57,4 +57,5 @@ public class Member {
         this.dayKcal = dayKcal;
         this.targetWeight = targetWeight;
     }
+
 }

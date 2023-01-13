@@ -28,7 +28,7 @@ public class Recommend {
     private List<Answer> answers = new ArrayList<Answer>();
 
     @Builder
-    public Recommend(String content) {
+    private Recommend(String content) {
         this.content = content;
     }
 }

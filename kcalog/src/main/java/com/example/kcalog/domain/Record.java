@@ -34,8 +34,7 @@ public class Record {
     private List<RecordItem> recordItems = new ArrayList<RecordItem>();
 
     @Builder
-
-    public Record(MealType mealType, LocalDate date) {
+    private Record(MealType mealType, LocalDate date) {
         this.mealType = mealType;
         this.date = date;
     }
