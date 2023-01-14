@@ -29,6 +29,11 @@ public class Answer {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    public void update(String content, Emotion emotion){
+        this.content = content;
+        this.emotion = emotion;
+    }
+
     @Builder
     private Answer(String content, Emotion emotion) {
         this.content = content;
