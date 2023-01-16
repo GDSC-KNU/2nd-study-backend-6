@@ -27,7 +27,7 @@ public class Food {
     @Column(name = "carbohydrates")
     private float carb; //탄수화물
 
-    @OneToOne(mappedBy = "food")
+    @OneToOne(mappedBy = "food", fetch = FetchType.LAZY)
     private RecordItem recordItem;
 
     @Builder

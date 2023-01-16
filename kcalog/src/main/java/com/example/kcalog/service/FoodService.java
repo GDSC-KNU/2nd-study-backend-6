@@ -35,8 +35,8 @@ public class FoodService {
     /**
      * 아이디로 음식 조회
      */
-    public Optional<Food> findOne(Long foodId) {
-        return foodRepository.findById(foodId);
+    public List<Food> findOne(String foodName) {
+        return foodRepository.findByFoodName(foodName);
     }
 
 
