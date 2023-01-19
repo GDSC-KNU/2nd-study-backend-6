@@ -16,11 +16,10 @@ public class Recommend {
     @Column(name = "recommend_id")
     private Long id;
 
-
     @Column(name = "recommend_content")
     private String content;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
