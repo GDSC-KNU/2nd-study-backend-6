@@ -21,11 +21,11 @@ public class Answer {
     @Enumerated(EnumType.STRING)
     private Emotion emotion;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recommend_id")
     private Recommend recommend;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 

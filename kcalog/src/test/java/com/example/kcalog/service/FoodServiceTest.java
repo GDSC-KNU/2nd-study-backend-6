@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @Transactional
@@ -53,5 +52,24 @@ public class FoodServiceTest {
 
 
     }
+
+    @Test
+    public void 음식_이름_조회() throws Exception{
+        //given
+        String[] foods = {"밥", "소고기국", "만둣국", "국밥"};
+
+        for (String food : foods) {
+            foodRepository.save(Food.builder()
+                    .name(food)
+                    .build());
+        }
+
+        //when
+        List<Food> foodList = foodRepository.findByFoodName("국");
+
+        //then
+        Assertions.assertThat(foodList.size()).isEqualTo(3);
+     }
+
 
 }

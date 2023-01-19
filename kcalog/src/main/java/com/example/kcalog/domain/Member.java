@@ -1,10 +1,8 @@
 package com.example.kcalog.domain;
 
-import com.example.kcalog.domain.Gender;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;

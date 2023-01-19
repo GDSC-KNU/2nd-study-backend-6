@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
-
 
 @Service
 @Transactional(readOnly = true)
@@ -21,22 +19,22 @@ public class FoodService {
      * 음식 등록
      */
     @Transactional
-    public void saveFood(Food food) {
-        foodRepository.save(food);
+    public Food save(Food food) {
+        return foodRepository.save(food);
     }
 
     /**
      * 모든 음식 조회
      */
-    public List<Food> findItems() {
+    public List<Food> findAll() {
         return foodRepository.findAll();
     }
 
     /**
      * 아이디로 음식 조회
      */
-    public Optional<Food> findOne(Long foodId) {
-        return foodRepository.findById(foodId);
+    public List<Food> findOne(String foodName) {
+        return foodRepository.findByFoodName(foodName);
     }
 
 

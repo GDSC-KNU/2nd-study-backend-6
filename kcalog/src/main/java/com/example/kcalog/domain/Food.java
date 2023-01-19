@@ -3,7 +3,6 @@ package com.example.kcalog.domain;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -27,7 +26,7 @@ public class Food {
     @Column(name = "carbohydrates")
     private float carb; //탄수화물
 
-    @OneToOne(mappedBy = "food")
+    @OneToOne(mappedBy = "food", fetch = FetchType.LAZY)
     private RecordItem recordItem;
 
     @Builder
