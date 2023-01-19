@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>save</title>
+</head>
+<body>
+<!-- action 속성 : form에 작성한 데이터를 어디로 보낼지 지정-->
+<form action="/member/save" method="post">
+  이메일 : <input type="text" name="email"> <br>
+  이름 : <input type="text" name="name"><br>
+  비밀번호 : <input type="password" name="password"><br>
+  성별 : <select name="gender">
+  <option th:each="gender : ${genders}"
+          th:value="${gender}" th:text="${gender.name()}"></option>
+</select><br>
+  키 : <input type="text" name="height"><br>
+  몸무게 : <input type="text" name="weight"><br>
+  칼로리 : <input type="text" name="dayKcal"><br>
+  <input type="submit" value="회원가입">
+</form>
+
+</select>
+</body>
+</html>
