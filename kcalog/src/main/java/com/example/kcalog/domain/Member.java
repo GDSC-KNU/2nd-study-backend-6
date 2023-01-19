@@ -58,4 +58,14 @@ public class Member {
         this.targetWeight = targetWeight;
     }
 
+    public Member(String email, String password, String name, float height, float weight, Gender gender, float dayKcal) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.gender = gender;
+        this.dayKcal = dayKcal;
+    }
+
 }
