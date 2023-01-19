@@ -21,7 +21,7 @@ public class MemberDTO {
     private Gender gender;
     private float dayKcal;
 
-    public Member tomember() {
+    public Member toMember() {
         return new Member(email, password, name, height, weight, gender, dayKcal);
     }
 
